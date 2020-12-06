@@ -1,6 +1,7 @@
+from aocd import get_data
 m = []
 
-for line in open('day3.input', 'r'):
+for line in get_data(open(file='token.input').read(), day=3, year=2020).splitlines():
     m.append(line.strip())
 
 

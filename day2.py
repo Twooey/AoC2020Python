@@ -1,10 +1,10 @@
 import re
-
+from aocd import get_data
 f = []
 regex = r"(\d+)\-(\d+\s\D)\:(\s\w+)"
 subst = "\\1 \\2\\3\\r"
 
-for line in open("day2.input", "r"):
+for line in list(get_data(open(file='token.input').read(), day=2, year=2020).splitlines()):
     temp = re.sub(regex, subst, line, 1).strip().split(" ")
     temp[0] = int(temp[0])
     temp[1] = int(temp[1])

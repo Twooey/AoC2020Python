@@ -1,4 +1,5 @@
 import re
+from aocd import get_data
 
 PassportRequirements = [
     ("byr", lambda x: 1920 <= int(x) <= 2002),
@@ -14,7 +15,7 @@ part1 = 0
 part2 = 0
 
 
-for i in open("day4.input", "r").read().split('\n\n'):
+for i in get_data(open(file='token.input').read(), day=4, year=2020).split('\n\n'):
     i = i.split('\n')
     i = " ".join(i)
     temp = (dict((x.strip(), y.strip())
